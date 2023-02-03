@@ -11,7 +11,6 @@ use Tests\TestCase;
 
 class NewsTest extends TestCase
 {
-    public array $newsObjStructure;
     public User $user;
 
     public function setUp(): void
@@ -19,7 +18,6 @@ class NewsTest extends TestCase
         parent::setUp();
         $this->user = User::factory()->create();
         $this->actingAs($this->user, 'sanctum');
-        $this->newsObjStructure = ['id', 'title', 'content', 'user_id', 'author_name', 'created_at', 'updated_at'];
     }
 
     public function test_create_news()
